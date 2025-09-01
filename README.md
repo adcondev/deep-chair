@@ -9,7 +9,7 @@ Deep learning-based facial-gesture analysis system for motorized wheelchair cont
 
 ## Project Overview
 
-Deep Chair uses computer vision and deep learning to analyze sitting posture in real-time, providing feedback for ergonomic improvements and preventing musculoskeletal disorders.
+Deep Chair uses computer vision and deep learning to analyze facial-gesture posture in real-time to control wheelchair mottors and directions, providing feedback for movement..
 
 ## Features
 
