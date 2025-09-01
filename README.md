@@ -13,11 +13,8 @@ Deep Chair uses computer vision and deep learning to analyze sitting posture in 
 
 ## Features
 
-- 📹 **Real-time Analysis**: Live posture detection from webcam
-- 🧠 **Deep Learning**: CNN-based posture classification
-- 📊 **Posture Metrics**: Spine angle, shoulder alignment, head position
-- ⚠️ **Alert System**: Notifications for poor posture
-- 📈 **Analytics Dashboard**: Historical posture tracking
+- 📹 **Real-time Analysis**: Live facial-gesture detection from webcam
+- 🧠 **Deep Learning**: CNN-based facial-gesture classification
 - 🎯 **Accuracy**: 94% classification accuracy
 
 ## Architecture
