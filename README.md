@@ -41,7 +41,7 @@ graph TD;
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/deep-chair.git
+    git clone https://github.com/adcondev/deep-chair.git
     cd deep-chair
     ```
 
