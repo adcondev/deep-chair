@@ -7,15 +7,19 @@ This project, "Deep Chair," is a real-time facial gesture recognition system des
 ## Tech Stack and Key Technologies
 
 *   **Languages:** Python
-*   **Frameworks and Libraries:**
-    *   **PyTorch:** Used for building, training, and deploying the deep learning model.
-    *   **OpenCV:** Employed for real-time video capture from the webcam and image preprocessing.
-    *   **scikit-image:** Utilized for image transformations.
-    *   **NumPy & Pandas:** Leveraged for numerical operations and data manipulation.
-    *   **Matplotlib:** Used for data visualization and plotting during model training and evaluation.
-*   **Hardware:**
-    *   **Arduino:** Used as an intermediary to control the wheelchair's motors based on signals received from the Python script.
-    *   **Serial Communication:** The `pyserial` library was used to establish communication between the computer running the Python script and the Arduino.
+*   **Deep Learning Frameworks:**
+    *   **PyTorch:** Core framework for model definition, loading pre-trained weights (ResNet-18), and inference.
+    *   **Torchvision:** Used for accessing the ResNet-18 architecture and implementing complex image transformations (CenterCrop, RandomResizedCrop, Normalization) for data augmentation.
+*   **Computer Vision & Image Processing:**
+    *   **OpenCV (cv2):** Primary tool for real-time video capture, frame extraction, and overlaying text on the video feed.
+    *   **scikit-image:** Used for additional image processing tasks.
+    *   **PIL (Python Imaging Library):** Used in conjunction with Torchvision for image format compatibility.
+*   **Data Science & Utilities:**
+    *   **NumPy & Pandas:** For efficient numerical computation and data structure management.
+    *   **Matplotlib:** For visualizing training progress and model predictions.
+*   **Hardware Interface:**
+    *   **PySerial:** Critical for establishing serial communication (UART) between the Python application and the Arduino microcontroller.
+    *   **Arduino:** The embedded system receiving control commands ('0', '1', '2', '3', '4') to drive the wheelchair motors.
 
 ## Notable Libraries
 
@@ -25,16 +29,26 @@ This project, "Deep Chair," is a real-time facial gesture recognition system des
 
 ## Major Achievements and Skills Demonstrated
 
-*   **Designed and Implemented a Real-Time Facial Gesture Recognition System:** Developed a complete pipeline from video capture to hardware control, capable of processing video in real-time.
-*   **Implemented Transfer Learning for Image Classification:** Fine-tuned a pre-trained ResNet-18 convolutional neural network (CNN) on a custom dataset of facial gestures, achieving high classification accuracy.
-*   **Integrated a Deep Learning Model with External Hardware:** Successfully established serial communication between a Python application and an Arduino, allowing the deep learning model's predictions to control physical motors.
-*   **Developed a Data Preprocessing and Augmentation Pipeline:** Created a pipeline using `torchvision.transforms` to prepare and augment the image dataset for training, which included resizing, cropping, normalization, and other techniques to improve model generalization.
-*   **Engineered a Standalone Control Application:** The `ControlFacial.py` script serves as a complete application that captures video, performs inference with the trained model, and sends commands to the hardware, demonstrating the ability to create end-to-end solutions.
+*   **End-to-End AI Application Development:**
+    *   Built a complete system connecting a high-level Python AI application with low-level hardware control.
+    *   Orchestrated the flow from **Webcam Input -> Preprocessing -> Deep Learning Inference -> Serial Output -> Physical Action**.
+
+*   **Transfer Learning & Model Fine-Tuning:**
+    *   Successfully implemented **Transfer Learning** using a pre-trained **ResNet-18** model.
+    *   Modified the fully connected layer (`model.fc`) to match the specific 5-class problem (Up, Down, Left, Right, Neutral).
+    *   Implemented a training loop with **SGD optimizer**, **CrossEntropyLoss**, and **Learning Rate Scheduling** (`StepLR`).
+
+*   **Real-Time Computer Vision Pipeline:**
+    *   Developed a real-time inference loop in `ControlFacial.py` that processes video frames on the fly.
+    *   Optimized performance by using **CUDA** (GPU acceleration) when available, ensuring low-latency control signals.
+    *   Handled real-time video streams and gracefully managed hardware exceptions (e.g., Arduino disconnection).
+
+*   **Robust Data Pipeline:**
+    *   Created a comprehensive data augmentation strategy in `TransferLearning.py` using `transforms.RandomResizedCrop` and `transforms.Normalize` to improve model generalization and robustness against lighting/position variations.
 
 ## Skills Gained/Reinforced
 
-*   **Deep Learning:** Convolutional Neural Networks (CNNs), Transfer Learning, Model Training and Evaluation.
-*   **Computer Vision:** Real-Time Image and Video Processing, Image Preprocessing, Data Augmentation.
-*   **Hardware Integration:** Interfacing software with microcontrollers (Arduino), Serial Communication.
-*   **Software Engineering:** Modular code structure, dependency management (implicitly), creating end-to-end applications.
-*   **API Usage:** Proficient use of PyTorch, OpenCV, and NumPy APIs.
+*   **Deep Learning Engineering:** Practical experience with CNNs, hyperparameter tuning, and managing training/validation splits.
+*   **Embedded Systems Integration:** Bridging the gap between software and hardware using Serial communication protocols.
+*   **Python Proficiency:** Advanced usage of libraries like `torch`, `cv2`, and `serial` to build complex, multi-component systems.
+*   **Problem Solving:** Addressing real-world constraints like real-time processing requirements and hardware availability checks.
