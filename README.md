@@ -5,11 +5,11 @@
 [![Language](https://img.shields.io/badge/Language-Python-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A deep learning-based facial gesture analysis system for motorized wheelchair control. This project was developed as a final project for a BSc in Computer Science at UPSIN in 2018.
+**Deep Chair** is a deep learning-based facial gesture analysis system designed for motorized wheelchair control. Developed as a final project for a BSc in Computer Science at UPSIN, it enables hands-free navigation by translating facial expressions into motor commands in real-time.
 
 ## Project Overview
 
-Deep Chair uses computer vision and a deep learning model to analyze facial gestures in real-time. The system captures video from a webcam, classifies the user's facial gesture using a fine-tuned ResNet-18 model, and sends control signals to an Arduino to operate a motorized wheelchair.
+Deep Chair leverages computer vision and a fine-tuned Convolutional Neural Network (CNN) to detect and classify facial gestures from a live webcam feed. The system processes these gestures to generate control signals, which are sent to an Arduino microcontroller to drive the wheelchair's motors.
 
 ## Architecture
 
@@ -38,8 +38,8 @@ graph TD;
 
 - **Core:** Python 3.x
 - **AI/ML:** PyTorch, Torchvision
-- **Vision:** OpenCV, scikit-image, PIL
-- **Data:** NumPy, Pandas, Matplotlib
+- **Vision:** OpenCV, PIL
+- **Data:** NumPy, Matplotlib
 - **Hardware:** PySerial, Arduino
 
 ## Installation
@@ -60,7 +60,7 @@ graph TD;
 
 2.  **Install dependencies:**
     ```bash
-    pip install torch torchvision opencv-python numpy pandas matplotlib scikit-image pyserial pillow
+    pip install torch torchvision opencv-python numpy matplotlib pyserial pillow
     ```
 
 3.  **Hardware Setup:**
